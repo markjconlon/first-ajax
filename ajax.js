@@ -17,9 +17,12 @@ $(document).ready(function () {
       // dataType: 'html',
     }).done(function(data) {
       $('#step3456').append(data);
+      console.log('Hey that worked!');
     }).fail(function(jqXHR, textStatus){
       console.log('.ajax Failed with ' + jqXHR.status + ' ' + jqXHR.statusText);
       $('#step3456').append("Sorry we will try harder next time.");
+    }).always(function (){
+      console.log('Hey the request finished!');
     });
   });
 });
